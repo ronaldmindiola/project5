@@ -1,0 +1,51 @@
+---
+import "../styles/global.css";
+import { SEO } from "astro-seo";
+
+// Variables para valores repetidos
+const siteTitle = "A Very Descriptive Title";
+const siteDescription = "A heavily optimized description full of well-researched keywords.";
+const ogImage = "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png";
+const faviconPath = "/favicon.svg";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<SEO
+			title={siteTitle}
+			description={siteDescription}
+			openGraph={{
+				basic: {
+					title: siteTitle,
+					type: "website", // Corregido a un valor apropiado
+					image: ogImage,
+				},
+			}}
+			twitter={{
+				creator: "@jonasmerlins1",
+			}}
+			extend={{
+				// Solo definimos el favicon aquí, eliminando la duplicación
+				link: [{ rel: "icon", type: "image/svg+xml", href: faviconPath }],
+				meta: [
+					{
+						name: "twitter:image",
+						content: ogImage,
+					},
+					{
+						name: "twitter:title",
+						content: siteTitle, // Usando la variable
+					},
+					{ name: "twitter:description", content: siteDescription }, // Usando la variable
+				],
+			}}
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

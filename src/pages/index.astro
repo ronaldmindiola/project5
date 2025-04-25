@@ -1,16 +1,21 @@
 ---
-
+import MainLayout from "@layouts/MainLayout.astro";
+import { Button } from "@/components/ui/button"
+import { Image } from "astro:assets";
+import locationImage from "../images/location.png";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+	<Button variant="outline">Button</Button>
+	<Image src={locationImage} alt="A bird sitting on a nest of eggs." />
+
+	<h1 class="text-3xl font-bold underline text-amber-300">Welcome to Astro!</h1>
+	<p>Get started by editing <code>src/pages/index.astro</code></p>
+	<p>Learn more about Astro in the <a href="https://astro.build">documentation</a>.</p>
+	<p>Check out the <a href="https://astro.build/integrations">integrations</a> to add functionality to your site.</p>
+	<p>Explore the <a href="https://astro.build/blog">Astro blog</a> for the latest news and updates.</p>
+	<p>Join the <a href="https://astro.build/chat">Astro Discord</a> community to connect with other developers.</p>
+	<p>Follow <a href="https://astro.build/twitter">Astro on Twitter</a> for updates and announcements.</p>
+
+	
+<MainLayout/>
