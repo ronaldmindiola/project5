@@ -1,6 +1,6 @@
 ---
-import "../styles/global.css";
 import { SEO } from "astro-seo";
+import "../styles/global.css";
 
 // Variables para valores repetidos
 const siteTitle = "A Very Descriptive Title";
@@ -9,7 +9,8 @@ const ogImage = "https://user-images.githubusercontent.com/5182256/131216951-8f7
 const faviconPath = "/favicon.svg";
 ---
 
-<html lang="en">
+<html lang="es" class="" data-theme="dark">
+	<!-- El atributo lang se establece en "en" para el idioma inglés -->
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -46,6 +47,14 @@ const faviconPath = "/favicon.svg";
 		/>
 	</head>
 	<body>
-		<slot />
+		<header>
+			<slot name="header" />
+		</header>
+		<main class="container mx-auto px-4">
+			<slot />
+		</main>
+		<footer>
+			<slot name="footer" />
+		</footer>
 	</body>
 </html>
