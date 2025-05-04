@@ -1,0 +1,42 @@
+---
+interface Props {
+	text: string;
+	size?: "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl"; // Tamaño opcional
+	align?: "left" | "center" | "right"; // Alineación
+	weight?:
+		| "sans"
+		| "serif"
+		| "mono"
+		| "thin"
+		| "extralight"
+		| "light"
+		| "normal"
+		| "medium"
+		| "semibold"
+		| "bold"
+		| "extrabold"
+		| "black";
+	className?: string; // Clase adicional
+}
+
+const {
+	text,
+	size = "4xl",
+	align = "center",
+	className: myclassName,
+	weight = "bold",
+} = Astro.props;
+---
+<h1 class=
+`
+    text-pretty
+    text-${size}
+    text-${align}
+    font-${weight}
+    tracking-tight 
+    md:leading-tight 
+    ${myclassName}
+`
+> 
+    {text}
+</h1>

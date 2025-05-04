@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import "../styles/global.css";
+import Navigation from "@src/components/organisms/Navigation.astro";
 import Footer from "@src/components/organisms/Footer.astro";
 
 // Variables para valores repetidos
@@ -8,11 +9,10 @@ const siteTitle = "A Very Descriptive Title";
 const siteDescription = "A heavily optimized description full of well-researched keywords.";
 const ogImage = "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png";
 const faviconPath = "/favicon.svg";
----
 
+---
 <html lang="es" class="scrollbar-hide lenis lenis-smooth scroll-pt-16" data-theme="dark">
-	<!-- El atributo lang se establece en "en" para el idioma inglés -->
-	<head>
+    <head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -47,16 +47,16 @@ const faviconPath = "/favicon.svg";
 			}}
 		/>
 	</head>
-	<body>
-		<header>
-			header
-		</header>
-		<main>
-			<slot />
-			<!-- Aquí se renderizará el contenido de las páginas que usen este layout -->
-		</main>
-		<footer>
-			<Footer />
-		</footer>
-	</body>
+    <body>
+        <header>
+            <Navigation />
+        </header>
+        <main>
+            <slot />
+            <!-- Aquí se renderizará el contenido de las páginas que usen este layout -->
+        </main>
+        <footer>
+            <Footer />
+        </footer>
+    </body>
 </html>

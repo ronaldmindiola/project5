@@ -19,7 +19,14 @@
       "@public/*": ["./src/public/*"],
       "@styles/*": ["./src/styles/*"],
       "@lib/*": ["./src/lib/*"],
-      "@images/*": ["./src/images/*"]
-    }
+      "@images/*": ["./src/images/*"],
+      "@data/*": ["./src/data/*"],
+      "@ui/*": ["./components/ui/*"],
+      "@middlewares/*": ["./src//*"],
+      "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@api/*": ["./src/api/*"],
+    },
+    "types": ["react", "react-dom"]
   }
 }

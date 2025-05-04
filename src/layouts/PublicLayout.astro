@@ -2,6 +2,7 @@
 import { SEO } from "astro-seo";
 import "../styles/global.css";
 import Footer from "@src/components/organisms/Footer.astro";
+import Navigation from "@src/components/organisms/Navigation.astro";
 
 // Variables para valores repetidos
 const siteTitle = "A Very Descriptive Title";
@@ -49,7 +50,7 @@ const faviconPath = "/favicon.svg";
 	</head>
 	<body>
 		<header>
-			header
+			<Navigation/>
 		</header>
 		<main>
 			<slot />

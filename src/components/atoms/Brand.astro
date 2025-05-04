@@ -1,0 +1,32 @@
+---
+import logoDark from "../../images/logo/logo-dark.png";
+import logoLight from "@images/logo/logo-light.png";
+
+
+interface BrandProps {
+  label?: string;
+	className?: string;
+}
+
+const { className = "", label } = Astro.props;
+---
+<a href="/">
+  <picture class="flex items-center">
+  <source
+    srcset={logoDark.src}
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset={logoLight.src}
+    media="(prefers-color-scheme: light)"
+  />
+  
+  <img
+    alt='logo'
+    class={`w-auto h-10 ${className} animate-pulse`}
+    loading="lazy"
+  />
+  <h5 class="font-black text-2xl ml-2 ">{label}</h5>
+</picture>
+</a>
+

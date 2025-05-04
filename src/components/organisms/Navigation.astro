@@ -1,0 +1,26 @@
+---
+import Brand from "@components/atoms/Brand.astro";
+import { ModeToggle } from "@ui/ModeToggle";
+import NavLinks from "@components/atoms/NavLinks.astro";
+import UserMenu from "@components/molecules/UserMenu";
+
+---
+<nav
+      class="relative mx-2 w-full rounded-[36px] border border-yellow-100/40 bg-yellow-50/60 px-4 py-3 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto mb-4"
+      aria-label="Global"
+    >
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        
+        <!-- Brand + Logo -->
+        <Brand
+            label="Mi Sitio Web"
+            className="w-auto h-10"
+            alt="Logo"
+        />
+
+        <NavLinks />
+
+        <UserMenu client:load />
+        <ModeToggle client:load />
+    </div>
+</nav>

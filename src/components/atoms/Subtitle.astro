@@ -1,0 +1,21 @@
+---
+interface Props {
+	text: string;
+	size?: "lg" | "xl" | "2xl" | "3xl" | "4xl"; // Tamaño opcional
+	align?: "left" | "center" | "right"; // Alineación
+	weight?: "thin" | "light" | "normal" | "bold";
+	className?: string; // Clase adicional
+}
+
+const {
+	text,
+	align,
+	weight = "normal",
+	className: myclassName,
+	size = "lg",
+} = Astro.props;
+---
+
+<p class={`text-pretty text-${size} text-${align} ${myclassName} font-${weight}`}>
+  {text}
+</p>

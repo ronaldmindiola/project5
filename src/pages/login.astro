@@ -1,0 +1,14 @@
+---
+import { GalleryVerticalEnd } from "lucide-react"
+import { LoginForm } from "@components/organisms/LoginForm"
+import BlankLayout from "@src/layouts/BlankLayout.astro"
+---
+<BlankLayout>
+  <a href="#" class="flex items-center gap-2 self-center font-medium">
+  <div class="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
+    <GalleryVerticalEnd className="size-4" />
+  </div>
+    Project5 Inc.
+  </a>
+  <LoginForm client:load/>
+</BlankLayout>

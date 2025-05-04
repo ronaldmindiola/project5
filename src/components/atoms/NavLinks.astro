@@ -1,0 +1,30 @@
+---
+import { navLinks } from "@data/data";
+
+// Obtenemos la ruta actual para determinar cuál enlace está activo
+const current = Astro.url.pathname;
+
+console.log("current:", current);
+---
+
+<div class="hidden md:block">
+  <div class="ml-10 flex items-baseline space-x-4">
+    {
+      navLinks.map((link) => {
+        const isActive = current === link.href; // Compara la ruta actual con el href del enlace
+        return (
+          <>
+            <a
+              href={link.href}
+              data-astro-prefetch
+              class={` hover:bg-neutral-800 px-3 py-2 rounded-lg text-base font-medium ${isActive ? "bg-neutral-800 text-orange-500" : ""}`}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {link.name}
+            </a>
+          </>
+        );
+      })
+    }
+  </div>
+</div>

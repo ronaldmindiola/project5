@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  tagline: string;
+  icon: string;
+  weight: string;
+  align: string;
+  className: string;
+  iconclassName: string;
+}
+
+const {
+  title,
+  tagline,
+  icon,
+  weight,
+  align,
+  className: myclassName,
+  iconclassName,
+} = Astro.props;
+---
+
+<section class="container mx-auto my-8 space-y-4 p-6 lg:px-8">
+  <h2
+    class="text-center text-3xl font-extrabold text-neutral-800 dark:text-neutral-200"
+  >
+    <i class={`fa-solid ${icon} ${iconclassName}`}></i>
+    {title}
+  </h2>
+  <p
+    class="mt-4 text-center text-lg text-neutral-600 dark:text-neutral-400 text-pretty"
+  >
+    {tagline}
+  </p>
+</section>

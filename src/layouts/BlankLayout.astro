@@ -2,6 +2,7 @@
 import { SEO } from "astro-seo";
 import "../styles/global.css";
 import Footer from "@src/components/organisms/Footer.astro";
+import Navigation from "@src/components/organisms/Navigation.astro";
 
 // Variables para valores repetidos
 const siteTitle = "A Very Descriptive Title";
@@ -48,15 +49,10 @@ const faviconPath = "/favicon.svg";
 		/>
 	</head>
 	<body>
-		<header>
-			header
-		</header>
-		<main>
-			<slot />
-			<!-- Aquí se renderizará el contenido de las páginas que usen este layout -->
-		</main>
-		<footer>
-			<Footer />
-		</footer>
+		<main class="flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+			<div class="flex w-full max-w-sm flex-col gap-6">
+                <slot>
+            </div>
+        </main> 
 	</body>
 </html>
