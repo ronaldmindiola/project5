@@ -4,9 +4,10 @@ import Login from "./login.astro";
 const isLoggedIn = true;
 ---
 <Layout>
-	<div id="content-container">
+	<h1 class="text-9xl">Welcome Index</h1>
+	<!-- <div id="content-container">
 		{ !isLoggedIn ? <Index /> : <Login /> }
-	</div>
+	</div> -->
 </Layout>
 <script>
 	import { isLoggedIn } from '../utils/auth';
