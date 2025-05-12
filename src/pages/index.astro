@@ -1,20 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Login from "./login.astro";
-const isLoggedIn = true;
 ---
 <Layout>
 	<h1 class="text-9xl">Welcome Index</h1>
-	<!-- <div id="content-container">
-		{ !isLoggedIn ? <Index /> : <Login /> }
-	</div> -->
+	<p class="text-3xl">This is the index page</p>
 </Layout>
-<script>
-	import { isLoggedIn } from '../utils/auth';
-	
-	// Check login status on client side
-	if (isLoggedIn()) {
-	  // Redirect to dashboard or show welcome component
-	  window.location.href = '/dashboard';
-	}
-  </script>
